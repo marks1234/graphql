@@ -1,38 +1,62 @@
-# create-svelte
+# GraphQL Profile Project
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+## Overview
 
-## Creating a project
+This project is a SvelteKit application designed to showcase user profiles using GraphQL to fetch and display data. It features a login system and interactive statistic graphs created with SVG to visualize user progress and achievements.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Features
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+- User authentication with JWT via GraphQL.
+- Dynamic profile page that displays user information including basic identification, XP amount, audit ratio, and skill progress.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+## Getting Started
 
-## Developing
+### Prerequisites
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+- Node.js installed on your machine.
+- Access to the GraphQL endpoint provided by the platform.
 
-```bash
-npm run dev
+### Installation
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+1. Clone the repository:
 
-## Building
+   ```bash
+   git clone https://01.kood.tech/git/mkuzmina/graphql
+   ```
 
-To create a production version of your app:
+2. Navigate to the project directory:
+   ```bash
+   cd graphql
+   ```
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
 
-```bash
-npm run build
-```
+### Running the Project
 
-You can preview the production build with `npm run preview`.
+1. Start the development server:
+   ```bash
+   npm run dev
+   ```
+2. Open your browser and navigate to `http://localhost:5173`.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+### Hosting
+
+The application is hosted on [your chosen platform], accessible at [your deployed URL].
+
+## Usage
+
+### Login Page
+
+- The login page supports authentication using either username:password or email:password.
+- Upon successful login, a JWT is obtained and used for subsequent GraphQL queries.
+
+### Profile Page
+
+- Displays selected user information fetched from the GraphQL API.
+- Incorporates SVG graphs to visualize data, which are interactive and responsive.
+
+## GraphQL Queries
+
+The project utilizes various GraphQL queries to fetch data, including normal, nested, and argument-based queries.

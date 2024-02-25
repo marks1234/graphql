@@ -1,53 +1,40 @@
-<script>
-	import Header from './Header.svelte';
+<script lang="ts">
+	import '../app.pcss';
+	// Importing the page component, which would be your home page
+	// import { userProfileStore } from '$lib/userProfileStore';
 	import './styles.css';
+	import '../app.pcss';
+	import Login from './login.svelte';
+	// import type { UserProfile } from '$lib/types';
+
+	$: loggedIn = false;
+
+	function login() {
+		loggedIn = !loggedIn;
+	}
 </script>
 
-<div class="app">
-	<Header />
-
-	<main>
+<article class="m-auto flex h-screen w-screen items-center justify-center">
+	{#if loggedIn}
 		<slot />
-	</main>
-
-	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-	</footer>
-</div>
+	{:else}
+		<Login
+			on:login={({ detail }) => {
+				login();
+				return;
+			}}
+		/>
+	{/if}
+</article>
 
 <style>
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
-
+	/* Your global styles could go here, or you could import a global stylesheet
 	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
+		top: 50%;
 		justify-content: center;
 		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
-	}
+		padding: 1rem;
+		max-width: 300px;
+		margin: 0 auto;
+	} */
 </style>
